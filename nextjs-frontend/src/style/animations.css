@@ -1,0 +1,36 @@
+
+/* Marquee (hero words strip) */
+@keyframes marquee-x {
+  to { transform: translateX(-50%); }
+}
+.anim-marquee {
+  animation: marquee-x 32s linear infinite;
+}
+.anim-marquee-wrap:hover .anim-marquee {
+  animation-play-state: paused;
+}
+
+/* Slow spin (rotating badge) */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.anim-spin {
+  animation: spin-slow 18s linear infinite;
+}
+
+/* Pulsing border beam used in the calculators result card */
+@keyframes beam-head {
+  to { stroke-dashoffset: -100; }
+}
+.anim-beam {
+  stroke-dasharray: 6 94;
+  animation: beam-head 4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-marquee,
+  .anim-spin,
+  .anim-beam {
+    animation: none;
+  }
+}

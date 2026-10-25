@@ -1,0 +1,183 @@
+@import url("../style/animations.css");
+@import url("../style/button.css");
+@import "tailwindcss";
+
+
+/* =========================================
+   BASE THEME: DARK (DEFAULT)
+========================================= */
+:root {
+  --brand-primary: #f21e26;
+  --brand-secondary: #d41a22;
+  --brand-tertiary: #f87171;
+  --accent: var(--brand-primary);
+
+  /* Dark Canvas & Surfaces */
+  --background: #090a0c;
+  --surface: #12141a;
+  --surface-hover: #181b22;
+  --border: rgba(255, 255, 255, 0.08);
+  --section-bg-color: #141517;
+
+
+  /* Text Colors */
+  --text-primary: #ededed;
+  --text-secondary: #94a3b8;
+  --muted: #64748b;
+
+  /* Status Colors */
+  --info: #38bdf8;
+  --success: #22c55e;
+  --danger: #f87171;
+  --warning: #fbbf24;
+
+  /* Next.js Font Variables with Safe Web Fallbacks */
+  --font-display-family: var(--font-oswald, var(--font-syne, 'Oswald', 'Syne', sans-serif));
+  --font-sans-family: var(--font-jakarta, 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif);
+  --font-mono-family: var(--font-jetbrains, 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace);
+}
+
+/* =========================================
+   OPTIONAL: LIGHT THEME OVERRIDE
+========================================= */
+[data-theme="light"],
+.light {
+  --background: #eaeff5;        /* was #f8fafc, now clearly darker than the cards */
+  --surface: #f8fafc;           /* inputs / inner boxes sit slightly tinted on white cards */
+  --surface-hover: #e9eff5;
+  --border: #cbd5e1;            /* was #e2e8f0c0, now solid and visible */
+  --section-bg-color: #ffffff;
+  --section-shadow: 0 1px 2px rgb(15 23 42 / 0.06),
+                    0 10px 28px -14px rgb(15 23 42 / 0.18);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --muted: #64748b;             /* was #94a3b8, which failed contrast for placeholders */
+
+  --info: #0284c7;
+  --success: #16a34a;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+}
+
+/* [data-color="green"] {
+  --brand-primary: #16a34a;
+  --brand-secondary: #15803d;
+  --brand-tertiary: #86efac;
+  --accent: #16a34a;
+} */
+
+/* =========================================
+   TAILWIND CSS v4 THEME TOKENS
+========================================= */
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-muted: var(--muted);
+
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-tertiary: var(--brand-tertiary);
+  --color-accent: var(--accent);
+
+  --color-info: var(--info);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+
+  --font-display: var(--font-display-family);
+  --font-sans: var(--font-sans-family);
+  --font-mono: var(--font-mono-family);
+}
+
+/* =========================================
+   BASE STYLES & TYPOGRAPHY
+========================================= */
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    font-family: var(--font-sans-family);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  body::selection {
+    background-color: var(--brand-primary);
+    color: white;
+  }
+
+  /* h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display-family);
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  } */
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+.font-mono,
+.tabular-nums {
+  font-family: var(--font-mono-family);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Minimalist Dark Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* =========================================
+   REUSABLE: section / card / tag / badge background
+   Use:  className="section-bg"   (rounded-xl, p-5 etc. stay in the component)
+========================================= */
+@utility section-bg {
+  background-color: var(--section-bg-color);
+  border: 1px solid var(--border);
+  box-shadow: var(--section-shadow);
+}
+
+
+/* SECTION LAYOUT */
+
+.sectionlayout {
+  max-width: 1640px;
+  margin: 0 auto;
+  padding: 3px 2.5rem; 
+}
+@media (max-width: 1023px) {
+  .sectionlayout {
+    padding: 3px 1.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .sectionlayout {
+    padding: 3px 1rem;
+  }
+}
+
+
+

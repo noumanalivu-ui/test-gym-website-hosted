@@ -1,0 +1,69 @@
+/* =========================================
+src/style/button.css
+   BUTTON SYSTEM
+   Variants: .btn-primary .btn-dark .btn-secondary .btn-ghost .btn-danger .btn-link
+   Modifiers: .btn-sm .btn-lg .btn-block .btn-square .btn-wrap
+   ========================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  clip-path: polygon(12% 0%, 100% 0%, 88% 100%, 0% 100%);
+  padding: 0.75rem 2rem;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s, color 0.2s, opacity 0.2s, transform 0.1s;
+}
+.btn:active { transform: scale(0.95); }
+.btn:focus-visible { outline: 2px solid var(--brand-primary, #16a34a); outline-offset: 2px; }
+.btn:disabled,
+.btn[aria-disabled='true'] { opacity: 0.4; pointer-events: none; cursor: not-allowed; }
+
+.btn-primary { background: var(--brand-secondary); color: #fff; }
+.btn-primary:hover { opacity: 0.9; }
+
+.btn-dark { background: var(--text-primary); color: var(--background); }
+.btn-dark:hover { opacity: 0.9; }
+
+.btn-secondary {
+  background: color-mix(in srgb, var(--background) 40%, transparent);
+  color: var(--text-primary);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+.btn-secondary:hover { background: var(--surface-hover); }
+
+.btn-ghost { background: transparent; color: var(--text-primary); }
+.btn-ghost:hover { background: var(--surface-hover); }
+
+.btn-danger { background: var(--brand-primary); color: #fff; }
+.btn-danger:hover { opacity: 0.9; }
+
+/* Text-style link button (no slant, no padding). Contrast-safe in both themes. */
+.btn-link {
+  clip-path: none;
+  padding: 0;
+  background: transparent;
+  color: var(--brand-tertiary);
+}
+[data-theme='light'] .btn-link,
+.light .btn-link { color: var(--brand-secondary); }
+.btn-link:hover { opacity: 0.8; }
+
+.btn-sm { padding: 0.5rem 1.25rem; font-size: 0.75rem; }
+.btn-lg { padding: 1rem 2.5rem; font-size: 1rem; }
+.btn-block { width: 100%; }
+.btn-square { clip-path: none; border-radius: 0.5rem; }
+/* allow long labels to wrap on narrow screens */
+.btn-wrap { white-space: normal; text-align: center; }
+
+.btn > svg { flex-shrink: 0; width: 1rem; height: 1rem; }
