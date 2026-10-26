@@ -23,9 +23,7 @@ const schema = {
 
 const schemaJson = JSON.stringify(schema).replace(/</g, "\\u003c");
 
-const WHATSAPP_JOIN_URL = `https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(
-  whatsappMessage1 ?? `Hello ${SITE_NAME}, I want to join your classes. Please share the next steps.`
-)}`;
+const WHATSAPP_JOIN_URL = `https://wa.me/${whatsAppNumber}?text=${whatsappMessage1}`;
 
 // Server component. Only the slider ships client JS (tiny, no state).
 const WhyGymingGood = () => {

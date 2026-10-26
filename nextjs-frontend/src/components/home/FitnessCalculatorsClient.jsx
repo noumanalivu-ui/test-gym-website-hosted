@@ -638,26 +638,26 @@ const CtaBlock = ({ result }) => (
         Connect instantly with our coaching team.
       </p>
     </div>
-    <div className="flex flex-col sm:flex-row gap-3 lg:shrink-0">
-      <a
-        href={buildWhatsAppLink('I would like a personalized meal plan based on my result.', result)}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn btn-primary"
-      >
-        Get a personalized meal plan
-        <span className="sr-only"> (opens WhatsApp in a new tab)</span>
-      </a>
-      <a
-        href={buildWhatsAppLink('I would like to book a free fitness assessment.', result)}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn btn-secondary"
-      >
-        Book a free fitness assessment
-        <span className="sr-only"> (opens WhatsApp in a new tab)</span>
-      </a>
-    </div>
+<div className="flex w-full flex-col gap-3 lg:w-auto lg:shrink-0 lg:flex-row">
+  <a
+    href={buildWhatsAppLink('I would like a personalized meal plan based on my result.', result)}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn btn-primary h-auto! min-h-12 w-full whitespace-normal! px-8! py-3! text-center leading-snug! lg:w-auto"
+  >
+    Get a personalized meal plan
+    <span className="sr-only"> (opens WhatsApp in a new tab)</span>
+  </a>
+  <a
+    href={buildWhatsAppLink('I would like to book a free fitness assessment.', result)}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn btn-secondary h-auto! min-h-12 w-full whitespace-normal! px-8! py-3! text-center leading-snug! lg:w-auto"
+  >
+    Book a free fitness assessment
+    <span className="sr-only"> (opens WhatsApp in a new tab)</span>
+  </a>
+</div>
   </aside>
 );
 

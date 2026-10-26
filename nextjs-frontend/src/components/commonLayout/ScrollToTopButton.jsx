@@ -11,10 +11,10 @@ const ScrollToTopButton = () => {
   };
 
   return (
-    <div className="fixed bottom-8 right-3 z-50">
+    <div className="fixed bottom-5 right-3 z-50">
       <button
         onClick={scrollToTop}
-        className="border border-gray-600 text-gray-600 p-2 rounded-xl mix-blend-different"
+        className="border border-gray-600 text-gray-600 p-1 rounded-lg mix-blend-different"
         aria-label="Scroll to top"
       >
         <ChevronUp  />

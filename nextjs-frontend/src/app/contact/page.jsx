@@ -5,7 +5,7 @@ import PageHero from "../../components/PageHero";
 import { WhatsAppIcon } from "../../utils/icons";
 import {
   SITE_NAME,
-  SITE_URL, 
+  SITE_URL,
   SITE_TWITTER_HANDLE,
   SITE_LOGO_URL,
   SITE_OG_IMAGE,
@@ -21,6 +21,7 @@ import {
   twitter_url,
   whatsappMessage1,
   SITE_KEYWORDS,
+  addressMapEmbedUrl,
 } from "../../data/siteInfo";
 
 /* =========================================
@@ -277,10 +278,10 @@ export default function ContactPage() {
               )}
             </div>
 
-            {addressMapUrl && (
+            {addressMapEmbedUrl && (
               <iframe
                 title={`${SITE_NAME} location on Google Maps`}
-                src={addressMapUrl}
+                src={addressMapEmbedUrl}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
