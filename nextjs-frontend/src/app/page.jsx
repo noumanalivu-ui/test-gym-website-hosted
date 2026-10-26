@@ -1,3 +1,4 @@
+// src/app/page.jsx - Home Page
 import FitnessCalculators from "../components/home/FitnessCalculators";
 import Hero from "../components/home/Hero";
 import JourneyWithUs from "../components/home/JourneyWithUs"; 
